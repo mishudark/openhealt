@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="p in pacients |filter:search" class="list-bar">
+    <a href="javascript:void(0)" ng-click="load_questions(p.id); pacient.name = p.name; pacient.id = p.id">{{p.name}}</a>
+  </li>
+</ul>

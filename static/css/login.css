@@ -1,0 +1,30 @@
+body{
+  background-color: #1abc9c;
+}
+li{
+  text-decoration: none;
+  list-style: none;
+}
+label{
+  display: none;
+}
+form{
+  width: 359px;
+  margin: auto;
+  margin-top: 200px;
+  background-color: #edeff1;
+  padding: 24px 23px 20px 23px;
+  position: relative;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+input[type="password"],
+input[type="text"]{
+  width: 349px;
+}
+#save{
+  width: 359px;
+}

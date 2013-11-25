@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/nprogress.css" type="text/css" media="screen" charset="utf-8">
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/angular.min.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
+    <script type="text/javascript" src="/static/js/nprogress.js"></script>
+
+    {% csrf_token %}
+  </head>
+
+  {% block body %}
+  <body ng-app="dashboard" ng-controller="dashboardCtrl">
+    <input type="hidden" id="csrftoken" name="csrf" value="{{ csrf_token }}" />
+    <div ng-view></div>
+    <section id="left-panel" class="span3">
+    <header class="toolbar"><span>Open Healt</span></header>
+      <div id="search-box" class="input-prepend">
+        <span class="add-on">@</span>
+        <input type="text" id="search" class="span2" ng-model="search.name" placeholder="Search username" >
+      </div>
+      <div id="add-pacient">
+        <a href="javascript:void(0)" ng-click="add_pacient = true; pacient = {}; data=[]">Add pacient</a>
+      </div>
+      <div id="pacients" ng-include src="pacients_tpl"></div>
+    </section>
+    <section id="center-panel" class="span7">
+      <header><input type="text" value="mishudark's profile" ng-model="pacient.name" key-up="create_pacient()" focus-me="add_pacient" on-blur="hide_add_pacient()" placeholder="New username for pacient" /></header>
+      <div class="toolbar"></div>
+      <div ng-include src="tpl"></div>
+    </section>
+    <section id="right-panel" class="span5">
+      <header class="toolbar"></header>
+      <input type="text" ng-model="data[index].text" on-blur="offFocus(data[index])" />
+      <div class="divition"></div>
+      <textarea ng-model="data[index].description" focus-me="textarea.focus" tab="tab($index)" on-blur="offFocus(data[index])" ></textarea>
+    </section>
+  </body>
+  {% endblock %}
+</html>

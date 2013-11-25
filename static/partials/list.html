@@ -1,0 +1,6 @@
+<li ng-repeat="question in data">
+  <div class="number">{{$index + 1}}</div><div class="rowcell">
+    <input type="text" ng-model="question.text" ng-change="change($index,question)" key-enter="change($index,question, true)" backspace="backspace($index)" placeholder="Add a question" key="13" focus-me="question.focus" on-focus="setIndex($index)" tab="tab($index)" on-blur="offFocus(question)" tabindex="1" />
+    <button class="blue-button" ng-show="question.focus">+</button>
+  </div>
+</li>

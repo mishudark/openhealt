@@ -1,0 +1,15 @@
+<ul id="container">
+  <li ng-repeat="card in data">
+    <ul class="card">
+      <li class="temp">{{ card.day }}: {{ card.temp }} C</li>    
+      <li>
+        <ul class="subitems">
+          <li class="wind">Viento: {{ card.wind }}</li>    
+          <li class="hum">Humedad: {{ card.hum }}</li>    
+          <li class="direction">Dirección: {{ card.direction }}</li>    
+        </ul>
+      </li>
+      <li class="details"><a href="/dashboard/day-history">Ver detalles</a></li>
+    </ul>
+  </li>
+</ul>

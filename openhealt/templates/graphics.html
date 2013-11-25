@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+<script type="text/javascript" charset="utf-8" src="/static/js/highcharts.js"></script>
+<body ng-app="dashboard">
+    <input type="hidden" id="csrftoken" name="csrf" value="{{ csrf_token }}" />
+  <div id="graph" ng-controller="graphCtrl" style="width: 80%; height:80%; margin:auto; margin-top:10%;"></div>
+</body>
+{% endblock %}
